@@ -1,18 +1,20 @@
-// Primera forma
-$(function() {
-  console.log( "ready! primera forma" );
-});
-
-// Segunda forma
-$( document ).ready(function() {
-    console.log( "ready segunda forma!" );
-});
-
-// Tercera forma
 function onReady() {
-  console.log( "ready tercera forma!" );
+  $('.btn-say-hi').on('click', function (e) {
+    var name = $('#name').val();
+
+    $('.message').html('Hi ' + name);
+    e.preventDefault();
+  });
+
+  $('#name').on('keyup', function (e) {
+    var value = e.target.value;
+    $('.counter').html('Número de letras:' + value.length);
+  });
+
+  $('#course').on('change', function (e) {
+    var selectedOption = $(this).find('option:selected');
+    $('.selected-course').html('Curso seleccionado:' + selectedOption.text());
+  });
 }
 
 $(document).ready( onReady );
-// o:
-$(window).on( "load", onReady );
