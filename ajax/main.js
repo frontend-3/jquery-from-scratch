@@ -1,14 +1,14 @@
 function onReady() {
-  $('.form').on('submit', function (e) {
-    var code = $('#code').val();
+  $(".form").on("submit", function(e) {
+    var code = $("#code").val();
 
     $.post(
       "http://www.json-generator.com/api/json/get/cnffPOarci",
       {
-        'code': code
+        code: code
       },
-      function( data ) {
-        $( ".message" ).html( data.result );
+      function(data) {
+        $(".message").html(data.result);
       }
     );
 
@@ -16,4 +16,4 @@ function onReady() {
   });
 }
 
-$(document).ready( onReady );
+$(document).ready(onReady);
